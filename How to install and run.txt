@@ -1,0 +1,4 @@
+************ To reach to your dir - cd /d <Address>
+1. Make the project using - django-admin startproject <Project name>
+2. Run server - python manage.py runserver
+3. Make an app - python manage.py startapp music
