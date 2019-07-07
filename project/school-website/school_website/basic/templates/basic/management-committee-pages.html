@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+    <section class="management-committee-section">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="management-committee-heading">Management Committee</h1>
+                {% if request.path == "/management-committee/" %}
+                    <table class="table">
+                        <thead class="thead-color text-center">
+                            <tr>
+                                <th scope="col" width="30%">Name</th>
+                                <th scope="col" width="20%">Designation</th>
+                                <th scope="col" width="20%">occupation</th>
+                                <th scope="col" width="30%">Images</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr>
+                                <td>{{ page_1.name.1 }}</td>
+                                <td>{{ designation.1 }}</td>
+                                <td>{{ occupation.1 }}</td>
+                                <td><img src="{% static 'media/committe-pics/Ajay Kumar Aga.JPG' %}" alt="Ajay Kumar Aga pic"></td>
+                            </tr>
+                            <tr>
+                                <td>{{ page_1.name.2 }}</td>
+                                <td>{{ designation.2 }}</td>
+                                <td>{{ occupation.2 }}</td>
+                                <td><img src="{% static 'media/committe-pics/Ghanshyam Das Tolani.JFIF' %}" alt="Ghanshyam Das Tolani pic"></td>
+                            </tr>
+                            <tr>
+                                <td>{{ page_1.name.3 }}</td>
+                                <td>{{ designation.3 }}</td>
+                                <td>{{ occupation.2 }}</td>
+                                <td><img src="{% static 'media/committe-pics/Sudesh Kumar Gupta.JFIF' %}" alt="Sudesh Kumar Gupta pic"></td>
+                            </tr>
+                            <tr>
+                                <td>{{ page_1.name.4 }}</td>
+                                <td>{{ designation.4 }}</td>
+                                <td>{{ occupation.2 }}</td>
+                                <td><img src="{% static 'media/committe-pics/Ravi Bhushan Sahni.JFIF' %}" alt="Ravi Bhushan Sahni pic"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation committee-pagination">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="page-2">2</a></li>
+                            <li class="page-item"><a class="page-link" href="page-3">3</a></li>
+                        </ul>
+                    </nav>
+                {% elif request.path == "/management-committee/page-2/" %}
+                    <table class="table">
+                        <thead class="thead-color text-center">
+                            <tr>
+                                <th scope="col" width="30%">Name</th>
+                                <th scope="col" width="20%">Designation</th>
+                                <th scope="col" width="20%">occupation</th>
+                                <th scope="col" width="30%">Images</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr>
+                                <td>{{ page_2.name.5 }}</td>
+                                <td>{{ designation.5 }}</td>
+                                <td>{{ occupation.2 }}</td>
+                                <td><img src="{% static 'media/committe-pics/Vimal Agarwal.JPG' %}" alt="Vimal Agarwal pic"></td>
+                            </tr>
+                            <tr>
+                                <td>{{ page_2.name.6 }}</td>
+                                <td>{{ designation.6 }}</td>
+                                <td>{{ occupation.2 }}</td>
+                                <td><img src="{% static 'media/committe-pics/Vijay Ji Agarwal.JPG' %}" alt="Vijay Ji Agarwal pic"></td>
+                            </tr>
+                            <tr>
+                                <td>{{ page_2.name.7 }}</td>
+                                <td>{{ designation.6 }}</td>
+                                <td>{{ occupation.3 }}</td>
+                                <td><img src="{% static 'media/committe-pics/none.JFIF' %}" alt="Shipra Bajpai pic"></td>
+                            </tr>
+                            <tr>
+                                <td>{{ page_2.name.8 }}</td>
+                                <td>{{ designation.6 }}</td>
+                                <td>{{ occupation.3 }}</td>
+                                <td><img src="{% static 'media/committe-pics/Sheshdhar Dwivedi.JPG' %}" alt="Sheshdhar Dwivedi pic"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation committee-pagination">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="/management-committee/">Prev</a></li>
+                            <li class="page-item"><a class="page-link" href="/management-committee/page-3/">Next</a></li>
+                        </ul>
+                    </nav>
+                {% elif request.path == "/management-committee/page-3/" %}
+                    <table class="table">
+                        <thead class="thead-color text-center">
+                            <tr>
+                                <th scope="col" width="30%">Name</th>
+                                <th scope="col" width="20%">Designation</th>
+                                <th scope="col" width="20%">occupation</th>
+                                <th scope="col" width="30%">Images</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr>
+                                <td>{{ page_3.name.9 }}</td>
+                                <td>{{ designation.7 }}</td>
+                                <td>{{ occupation.2 }}</td>
+                                <td><img src="{% static 'media/committe-pics/Dinesh Agrawal.JPG' %}" alt="Dinesh Agrawal pic"></td>
+                            </tr>
+                            <tr>
+                                <td>{{ page_3.name.10 }}</td>
+                                <td>{{ designation.7 }}</td>
+                                <td>{{ occupation.2 }}</td>
+                                <td><img src="{% static 'media/committe-pics/Mahaveer Prasad.JFIF' %}" alt="Mahaveer Prasad pic"></td>
+                            </tr>
+                            <tr>
+                                <td>{{ page_3.name.11 }}</td>
+                                <td>{{ designation.7 }}</td>
+                                <td>{{ occupation.4 }}</td>
+                                <td><img src="{% static 'media/committe-pics/Dr.Satish Kaushal Bajpai.JPG' %}" alt="Dr.Satish Kaushal Bajpai pic"></td>
+                            </tr>
+                            <tr>
+                                <td>{{ page_3.name.12 }}</td>
+                                <td>{{ designation.2 }}</td>
+                                <td>{{ occupation.1 }}</td>
+                                <td><img src="{% static 'media/committe-pics/Ajay.JFIF' %}" alt="Ajay pic"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation committee-pagination">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="/management-committee/page-2/">prev</a></li>
+                            <li class="page-item"><a class="page-link" href="/management-committee/">1</a></li>
+                        </ul>
+                    </nav>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
