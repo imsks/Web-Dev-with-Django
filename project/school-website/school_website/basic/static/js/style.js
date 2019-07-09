@@ -15,24 +15,24 @@
       ); 
       
       var $slider = $(this);
-      var size = $slider.find("> div").length; //number of slides
+      var size = $slider.find("> img").length; //number of slides
       var position = 0; // current position of carousal
       var sliderIntervalID; // used to clear autoplay
         
       // Add a Dot for each slide
       $slider.append("<ul></ul>");
-      $slider.find("> div").each(function(){
+      $slider.find("> img").each(function(){
         $slider.find("> ul").append('<li></li>');
       });
         
       // Put .show on the first Slide
-      $slider.find("div:first-of-type").addClass("show");
+      $slider.find("img:first-of-type").addClass("show");
         
       // Put .showLi on the first dot
       $slider.find("li:first-of-type").addClass("showli")
   
        //fadeout all items except .show
-      $slider.find("> div").not(".show").fadeOut();
+      $slider.find("> img").not(".show").fadeOut();
       
       // If Autoplay is set to 'on' than start it
       if (set.autoPlay === "on") {
@@ -110,7 +110,7 @@
       function changeCarousel() {
         $slider.find(".show").removeClass("show").fadeOut();
         $slider
-          .find("> div")
+          .find("> img")
           .eq(position)
           .fadeIn(set.fadeSpeed)
           .addClass("show");

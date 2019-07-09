@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load staticfiles %}
 {% block body_block %}
     <!-- Welcome section -->
     <section class="welcome-section">
@@ -9,23 +9,23 @@
                 <p>We feel immense delighted representing our motive before you under which it is aimed to develop new generation equipped with all the skills and information. A well reputed and wisely regarded, ‘Institution is the axis of social awareness’. We would like to do our best efforts in developing new generation for awakening the society.</p>
                 <p>It would be prior brooding to do their all-round development along with adopting morals and centering five stepped methods of teaching. We would like to feel pride observing in our students the devotion and dedication for the motherland and performing herculean task for success and achievements. It would be challenging to maintain the moral values in rapidly changing modern circumstances. “what’s life without moral values?”.</p>
                 <p>To enable the students self dependent through the quality education, based on moral values so that they could be deserve to solve sincerely the negative severe circumstance of future. Our main motto is to provide them unrestraint expression freely by physical , Moral and spiritual development through which they could attempt the apex achievements in any field of their lives.</p>
-                <button type="button" class="btn-explore">Explore us</button>
+                <a href="#carousel"><button type="button" class="btn-explore">Explore us</button></a>
             </div>
         </div>
     </section>
     <!-- Welcome section ends -->
 
     <!-- Header carousel -->
-    <div class="carousel">
+    <div class="carousel" id="carousel">
         <div class="carousel-slider">
             <!-- Slider 1 -->
             <div class="slider" id="slider1">
                 <!-- Slides -->
-                <div style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/1200_bodie-11.jpg)"></div>
-                <div style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/jungle.jpg)"></div>
-                <div style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/Gif-pont-lueur-600.gif)"></div>
-                <div style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/1200_110627-8240-Myst.jpg)"></div>
-                <div style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/1200_Sharpened-version.jpg)"></div>
+                <img src="{% static 'media/image-gallery/Pt. Deen Dayal.JPG' %}" alt="Pt. Deen Dayal">
+                <img src="{% static 'media/image-gallery/students-smiling.JPG' %}" alt="students smiling">
+                <img src="{% static 'media/image-gallery/PrincipalsSpeech.JPG' %}" alt="Principal's Speech">
+                <img src="{% static 'media/image-gallery/prayer-scenes.JPG' %}" alt="prayer scenes">
+                <img src="{% static 'media/image-gallery/rangoli-event.JPG' %}" alt="rangoli event">
                 <!-- The Arrows -->
                 <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
                 <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
@@ -42,16 +42,16 @@
             <div class="row text-center">
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="card">
-                        <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/1200_bodie-11.jpg" alt="Card image" style="width:100%">
+                        <img class="card-img-top" src="{% static 'media/image-gallery/principal-desk-sign.JPG' %}" alt="principal-desk-sign" style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">Principal Speaks</h4>
                             <a href="#"><button type="button" class="card-btn">More</button></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">annual-function
                     <div class="card">
-                        <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/1200_bodie-11.jpg" alt="Card image" style="width:100%">
+                        <img class="card-img-top mid" src="{% static 'media/image-gallery/annual-function.JPG' %}" alt="annual-function" style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">Photo Gallery</h4>
                             <a href="#"><button type="button" class="card-btn">More</button></a>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="card">
-                        <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/1200_bodie-11.jpg" alt="Card image" style="width:100%">
+                        <img class="card-img-top" src="{% static 'media/image-gallery/annual-function-2.JPG' %}" alt="annual-function-2" style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">School Events</h4>
                             <a href="#"><button type="button" class="card-btn">More</button></a>
@@ -69,6 +69,7 @@
                 </div>
             </div>
 
+            <!--
             <div class="row text-center">
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="card">
@@ -98,6 +99,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </section>
     <!-- Explore section ends -->
