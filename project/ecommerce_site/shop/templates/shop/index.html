@@ -24,10 +24,11 @@
         {% for i in product %}
         <div class="col-xs-3 col-sm-3 col-md-3">
           <div class="card align-items-center" style="width: 18rem;">
-            <img src='/media/{{i.image}}' class="card-img-top" alt="...">
+            <img src='/media/{{i.image}}' class="card-img-top my-3" alt="...">
             <div class="card-body">
               <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name}}</h5>
               <p class="card-text">{{i.desc|slice:"0:53"}}...</p>
+              <b id="pricepr{{i.id}}">$ {{i.price}}</b><br>
               <span id="divpr{{i.id}}" class="divpr">
                   <button id="pr{{i.id}}" class="btn btn-primary cart">Add To Cart</button>
               </span>
@@ -70,14 +71,15 @@
             var idstr = this.id.toString();
             if (cart[idstr] != undefined) {
                 qty = cart[idstr][0] + 1;
-                cart[idstr] = [qty, name];
+                cart[idstr] = [qty, name, price];
             } else {
                 qty = 1;
                 name = document.getElementById('name' + idstr).innerHTML;
-                cart[idstr] = [qty, name];
+                price = document.getElementById('price' + idstr).innerHTML;
+                cart[idstr] = [qty, name, price];
             }
             updateCart(cart);
-            
+            console.log(cart);
         });
         //Add Popover to cart
         $('#popcart').popover();
@@ -92,6 +94,9 @@
                     popStr = popStr + "<b>" + i + "</b>. ";
                     popStr = popStr +  document.getElementById('name' + item).innerHTML.slice(0, 25) + "... Qty: " + cart[item][0] + '<br>';
                     i = i+1;
+                }
+                if(cart[item][0] == 0){
+                    document.getElementById('div' + item).innerHTML = '<button id="' + item + '" class="btn btn-primary cart">Add To Cart</button>'
                 }
             }
             popStr = popStr + "</div> <a href='/shop/checkout/'><button class='btn btn-primary' id='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id='clearCart'>Clear Cart</button>" 

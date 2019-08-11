@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Product(models.Model):
@@ -37,3 +38,12 @@ class Orders(models.Model):
 
     def __str__(self):
         return self.name
+
+class OrderUpdate(models.Model):
+    update_id  = models.AutoField(primary_key=True)
+    order_id = models.IntegerField(default="")
+    update_desc = models.CharField(max_length=5000)
+    timestamp = models.DateTimeField(default = timezone.now)
+
+    def __str__(self):
+        return self.update_desc[0:7] + "..."

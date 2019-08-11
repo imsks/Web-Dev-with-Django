@@ -7,6 +7,8 @@
         <div class="my-4">
             <ul class="list-group" id="items">
             </ul>
+            <ul class="list-group" id="pricesOfItems">
+            </ul>
         </div>
     </div>
     <div class="col my-4">
@@ -61,8 +63,8 @@ if (localStorage.getItem('cart') == null) {
 } else {
     cart = JSON.parse(localStorage.getItem('cart'));
 }
-console.log(cart);
 var sum = 0;
+var pricesOfItems = 0;
 if ($.isEmptyObject(cart)) {
     //if object is empty
     mystr = `<p>Your cart is empty, please add some items to your cart before checking out!</p>`
@@ -71,17 +73,27 @@ if ($.isEmptyObject(cart)) {
     for (item in cart) {
         let name = cart[item][1];
         let qty = cart[item][0];
+        let price = cart[item][2];
+        let price1 = parseInt(cart[item][2].slice(1,));
         sum = sum + qty;
+        pricesOfItems = pricesOfItems + price1 * qty;
         mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
                     ${name}
-                    <span class="badge badge-primary badge-pill">${qty}</span>
+                    <span class="badge badge-primary badge-pill">${qty} - ${price}</span>
                 </li>`
         $('#items').append(mystr);
+        console.log(price1);
     }
+    mystr1 = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                Total
+                <span class="badge badge-primary badge-pill">$ ${pricesOfItems}</span>
+            </li>`
+    $('#pricesOfItems').append(mystr1);
 }
 document.getElementById('cart').innerHTML = sum;
 $('#itemsJson').val(JSON.stringify(cart));
 {% if thank %}
+alert('Thanks for ordering with us. Your order is is {{id}}. Use it to track your order using our order tracker');
 localStorage.clear();
 document.location = "/shop";
 {% endif %}
